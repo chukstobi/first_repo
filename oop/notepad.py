@@ -165,4 +165,13 @@ class Notepad():
             transfer_to = input("Please enter beneficiary name: ")
             self.transfer(transfer_to)
 
-Notepad().begin()
+file_name = "notes_pass.csv"
+file = open(file_name, "r")
+data = file.read()
+print(type(data))
+
+for line in data.splitlines():
+    splitted_line = line.split(",")
+    name = splitted_line[0]
+    print(name)
+    password = splitted_line[1]
